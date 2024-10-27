@@ -9,6 +9,7 @@ import { getEvent } from './routes/get-event';
 import { getAttendeeBadge } from './routes/get-attendee-badge';
 import { checkIn } from './routes/check-in';
 import { getEventAttendees } from './routes/get-event-attendees';
+import { removeSelectedAttendees } from "./routes/remove-attendee";
 import { errorHandler } from './error-handler';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
@@ -43,6 +44,7 @@ app.register(getEvent);
 app.register(getAttendeeBadge);
 app.register(checkIn);
 app.register(getEventAttendees);
+app.register(removeSelectedAttendees);
 
 app.setErrorHandler(errorHandler);
 
